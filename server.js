@@ -1,4 +1,6 @@
+require('dotenv').config();
 const express=require('express');
+const cors=require('cors');
 const app=express();
 
 const path=require('path');
@@ -8,10 +10,17 @@ const PORT=process.env.PORT || 3000;
 const connectDB=require('./config/db');
 connectDB();
 
+// Cors
+
+const corsOptions={
+    origin:process.env.ALLOWED_CLIENTS.split(',')
+}
+
 // static middleware to server html/css files static files
 app.use(express.static('public'));
 
 
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Template Engine
