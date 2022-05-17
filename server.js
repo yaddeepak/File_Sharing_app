@@ -13,7 +13,7 @@ connectDB();
 // Cors
 
 const corsOptions={
-    origin:process.env.ALLOWED_CLIENTS.split(',')
+    origin:'*'
 }
 
 // static middleware to server html/css files static files
@@ -22,6 +22,13 @@ app.use(express.static('public'));
 
 app.use(cors(corsOptions));
 app.use(express.json());
+
+app.use((req,res,next)=>{
+    res.setHeader('Acces-Control-Allow-Origin','*');
+    res.setHeader('Acces-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+    res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
+    next(); 
+})
 
 // Template Engine
 app.set('views',path.join(__dirname,'/views'));
