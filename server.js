@@ -11,7 +11,6 @@ const app=express();
 const PORT=process.env.PORT || 3000;
 
 const connectDB=require('./config/db');
-const { error } = require('console');
 connectDB();
 
 // Cors
@@ -22,7 +21,7 @@ const corsOptions={
 
                           // MIDDLEWARES
 
-                          // static middleware to server html/css files static files
+// static middleware to server html/css files static files
 app.use(express.static('public'));
 app.use(cors(corsOptions));
 app.use(express.json());
