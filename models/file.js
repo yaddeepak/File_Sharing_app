@@ -11,3 +11,16 @@ const fileSchema = new Schema({
 }, { timestamps: true });
 
 module.exports = mongoose.model('File', fileSchema);
+
+
+// To delete all files from the database
+// const File=require('./models/file');
+// File.find({}, (error,files)=>{
+//     if(error){
+//         console.log(error);
+//     }else{
+//         files.map(file=>{
+//             file.remove();
+//         })
+//     }
+// } );
