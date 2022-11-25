@@ -3,14 +3,14 @@
     "name": "File-Sharing-Appp",
     "builds": [
         {
-            "src": "server.js",
+            "src": "index.js",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/server.js"
+            "dest": "/index.js"
         }
     ]
 }
