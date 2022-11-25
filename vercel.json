@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "File-Sharing",
+    "name": "File-Sharing-Appp",
     "builds": [
         {
             "src": "server.js",
